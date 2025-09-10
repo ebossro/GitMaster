@@ -16,7 +16,6 @@
 - [Fonctionnalités techniques](#-fonctionnalités-techniques)
 - [Responsive Design](#-responsive-design)
 - [Contribution](#-contribution)
-- [Licence](#-licence)
 
 ## 🎯 À propos
 
@@ -114,18 +113,6 @@ cd GitMaster
 
 # Ouvrir dans le navigateur
 open index.html
-```
-
-### Installation pour le développement
-```bash
-# Avec un serveur local (Python)
-python -m http.server 8000
-
-# Avec Node.js (si disponible)
-npx serve .
-
-# Avec PHP
-php -S localhost:8000
 ```
 
 ## 💻 Utilisation

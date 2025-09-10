@@ -224,12 +224,13 @@
 
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-50px);
+    /* Préserve le centrage horizontal (translateX(-50%)) pendant l’animation */
+    transform: translate(-50%, -50px);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     opacity: 1;
   }
 }
@@ -378,7 +379,7 @@ body::before {
   animation: float6 11s ease-in-out infinite, pulseFast 7s ease-in-out infinite;
 }
 
-/* HEADER */
+/* ===== HEADER RESPONSIVE ===== */
 
 #header-gitmaster {
   background-color: #182e7a;
@@ -459,11 +460,6 @@ body::before {
   outline-offset: 2px;
 }
 
-.nav-menu li a:focus {
-  outline: 2px solid #2475ff;
-  outline-offset: 2px;
-}
-
 .cta-button:focus {
   outline: 2px solid white;
   outline-offset: 2px;
@@ -476,7 +472,7 @@ body::before {
   }
 
   to {
-    transform: translate(0);
+    transform: translateX(0);
   }
 }
 
@@ -512,7 +508,7 @@ body::before {
 }
 
 .burger-menu.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 4px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .burger-menu.active span:nth-child(2) {
@@ -646,10 +642,14 @@ body::before {
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
+
   padding: 8rem 2rem 4rem 2rem;
   margin: 0 auto;
   max-width: 1400px;
+
+  /* Animation d'entrée */
   animation: fadeInUp 1s ease-out 0.3s both;
+
   min-height: 80vh;
   box-sizing: border-box;
 }
@@ -772,7 +772,9 @@ span {
   margin-top: 5rem;
   padding: 4rem 2rem;
   background-color: #190033;
+
   animation: fadeInUp 1s ease-out 0.6s both;
+
   min-height: auto;
   box-sizing: border-box;
 }
@@ -876,6 +878,7 @@ span {
   color: white;
 }
 
+/* Desktop : >1200px - Trois colonnes alignées côte à côte (33% chacune) */
 @media (min-width: 1201px) {
   #how-learning {
     padding: 5rem 3rem;
@@ -910,6 +913,7 @@ span {
   }
 }
 
+/* Tablet : 768px - 1200px - Trois colonnes, mais plus compactes */
 @media (max-width: 1200px) and (min-width: 769px) {
   #how-learning {
     padding: 4rem 2rem;
@@ -954,6 +958,7 @@ span {
   }
 }
 
+/* Mobile : <768px - Colonnes en deux rangées */
 @media (max-width: 768px) {
   #how-learning {
     padding: 3rem 1.5rem;
@@ -1006,6 +1011,7 @@ span {
   }
 }
 
+/* Small Mobile : <420px - Colonnes empilées verticalement */
 @media (max-width: 420px) {
   #how-learning {
     padding: 2.5rem 1rem;
@@ -1058,6 +1064,7 @@ span {
   }
 }
 
+/* Desktop : >1200px - Deux colonnes côte à côte (50/50) */
 @media (min-width: 1201px) {
   #section-maitriser {
     padding: 8rem 3rem 4rem 3rem;
@@ -1084,6 +1091,7 @@ span {
   }
 }
 
+/* Tablet : 768px - 1200px - Deux colonnes côte à côte mais compactes */
 @media (max-width: 1200px) and (min-width: 769px) {
   #section-maitriser {
     padding: 7rem 2rem 3rem 2rem;
@@ -1115,6 +1123,7 @@ span {
   }
 }
 
+/* Mobile : <768px - Colonnes empilées verticalement */
 @media (max-width: 768px) {
   #section-maitriser {
     flex-direction: column;
@@ -1166,6 +1175,7 @@ span {
   }
 }
 
+/* Small Mobile : <420px - Éléments ultra-compacts */
 @media (max-width: 420px) {
   #section-maitriser {
     padding: 5rem 1rem 2rem 1rem;
@@ -1302,7 +1312,6 @@ footer a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1px;
   background-color: #182e7a;
   height: 4rem;
 }
@@ -1311,6 +1320,7 @@ footer a {
   border-bottom: #2475ff 3px solid;
 }
 
+/* Desktop : >1200px - Menu complet et horizontal */
 @media (min-width: 1201px) {
   #header-gitmaster {
     width: 90%;
@@ -1326,6 +1336,7 @@ footer a {
   }
 }
 
+/* Tablet : 768px - 1200px - Menu réduit mais horizontal */
 @media (max-width: 1200px) and (min-width: 769px) {
   #header-gitmaster {
     width: 94%;
@@ -1347,6 +1358,7 @@ footer a {
   }
 }
 
+/* Mobile : <768px - Menu burger avec animation fluide */
 @media (max-width: 768px) {
   #header-gitmaster {
     height: 4.5rem;
@@ -1469,7 +1481,12 @@ footer a {
   }
 }
 
+/* Small Mobile : <420px - Éléments compacts et adaptés */
 @media (max-width: 420px) {
+  .footer1-gitmaster {
+    margin-top: 4rem;
+  }
+
   #header-gitmaster {
     width: 98%;
     height: 4rem;
@@ -1539,98 +1556,73 @@ footer a {
 
 
 #cta-section {
-  padding: 5rem 2rem;
-  margin: 5rem 0;
+  margin: 5rem 0 5rem 0;
   background-color: #190033;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta-inner {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: white;
 }
 
 .cta-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: white;
-  line-height: 1.2;
+  font-size: 2.2rem;
 }
 
 .cta-subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.cta-buttons .cta-btn {
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
+.cta-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 20px 25px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
+}
+
+.cta-primary {
   background-color: #2475ff;
   color: white;
-  box-shadow: 0 4px 15px rgba(36, 117, 255, 0.3);
 }
 
-.cta-buttons .cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(36, 117, 255, 0.5);
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(36, 117, 255, 0.4);
 }
 
-/* Tablet */
-@media (max-width: 1200px) {
-  #cta-section {
-    padding: 4rem 2rem;
-  }
-
-  .cta-title {
-    font-size: 2.5rem;
-  }
-
-  .cta-subtitle {
-    font-size: 1.1rem;
-  }
+.cta-secondary {
+  background-color: white;
+  color: #2475ff;
 }
 
-/* Mobile */
+.cta-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
 @media (max-width: 768px) {
   #cta-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .cta-inner {
-    gap: 1.25rem;
-  }
-
-  .cta-title {
-    font-size: 2rem;
-  }
-
-  .cta-subtitle {
-    font-size: 1rem;
-  }
-
-  .cta-buttons .cta-btn {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-  }
-}
-
-/* Small mobile */
-@media (max-width: 420px) {
-  #cta-section {
-    padding: 2.5rem 1rem;
+    margin: 3.5rem 1rem 0 1rem;
   }
 
   .cta-title {
@@ -1638,11 +1630,17 @@ footer a {
   }
 
   .cta-subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cta-title {
+    font-size: 1.6rem;
   }
 
-  .cta-buttons .cta-btn {
+  .cta-buttons a {
     width: 100%;
-    padding: 1rem;
+    text-align: center;
   }
 }

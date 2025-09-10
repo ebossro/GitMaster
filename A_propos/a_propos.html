@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos</title>
   <link rel="stylesheet" href="a_propos.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,31 +26,41 @@
 
       <header>
         <div id="header-gitmaster">
-          <div class="div1-logo-gitmaster" style="padding-left: 20px">
-            <div>
-              <img src="logo.jpg" alt="Logo" style="border-radius: 50px" />
+          <div class="div1-logo-gitmaster">
+            <div class="logo-container">
+              <img src="./logo.jpg" alt="Logo" />
             </div>
-            <div>
+            <div class="title-container">
               <h3>GitMaster</h3>
             </div>
           </div>
-          <nav>
+      
+          <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      
+          <nav class="nav-menu" id="nav-menu">
             <ul>
               <li><a href="../index.html">Accueil</a></li>
               <li><a href="../Page_commande/index.html">Commandes</a></li>
               <li><a href="../Page_VsCode/index.html">VS Code</a></li>
-              <li><a href="a_propos.html">A Propos</a></li>
+              <li><a href="./a_propos.html">A Propos</a></li>
             </ul>
           </nav>
+      
           <div class="div2-logo-gitmaster">
             <label class="toggle-switch">
               <input type="checkbox" id="darkmode-toggle" />
               <span class="slider"></span>
             </label>
-            <div>
-              <a href="../Page_commande/index.html"><button style="margin-right: 20px">
+            <div class="button-container">
+              <a href="../Page_commande/index.html">
+                <button class="cta-button">
                   Commencer <i class="fa-solid fa-arrow-right"></i>
-                </button></a>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -141,6 +152,7 @@
       </footer>
 
   </div> <!-- Fin du conteneur -->
+  <script src="../app.js"></script>
 </body>
 
 </html>

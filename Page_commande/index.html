@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,683 +10,764 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
+    <div class="floating-ball ball-1"></div>
+    <div class="floating-ball ball-2"></div>
+    <div class="floating-ball ball-3"></div>
+    <div class="floating-ball ball-4"></div>
+    <div class="floating-ball ball-5"></div>
+    <div class="floating-ball ball-6"></div>
+
     <header>
-    <div id="header-gitmaster">
-      <div class="div1-logo-gitmaster" style="padding-left: 20px">
-        <div>
-          <img src="./images/logogitMaster.jpg" alt="Logo" style="border-radius: 50px" />
-        </div>
-        <div>
-          <h3>GitMaster</h3>
-        </div>
-      </div>
-    <div class="burger-menu" id="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="../index.html">Accueil</a></li>
-          <li><a href="./Page_commande/index.html">Commandes</a></li>
-          <li><a href="../vscode/index.html">VS Code</a></li>
-          <li><a href="../apropos/apropos.html">A Propos</a></li>
-        </ul>
-      </nav>
-      <div class="div2-logo-gitmaster">
-        <label class="toggle-switch">
-          <input type="checkbox" id="darkmode-toggle" />
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-
-
- 
-        <section class="heros-section">
-
-              <div class="floating-ball ball-1"></div>
-  <div class="floating-ball ball-2"></div>
-  <div class="floating-ball ball-3"></div>
-  <div class="floating-ball ball-4"></div>
-  <div class="floating-ball ball-5"></div>
-  <div class="floating-ball ball-6"></div>
- 
-            
-            <div class="heros-content">
-                <h1>Découvrir les commandes GitHub</h1>
-                <p>Plateforme pour apprendre Git et GitHub sans la complexité du terminal.</p>
-                <div class="search-bar-container">
-                     <div class="search-input-group">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text"   id="searchInput" placeholder="git init, git add, git commit">
-                    </div> 
-                    <button class="search-button">Rechercher</button>
+        <div id="header-gitmaster">
+            <!-- Logo et titre alignés à gauche -->
+            <div class="div1-logo-gitmaster">
+                <div class="logo-container">
+                    <img src="./images/logogitMaster.jpg" alt="Logo" />
                 </div>
-              
+                <div class="title-container">
+                    <h3>GitMaster</h3>
+                </div>
             </div>
-        </section>
-
+    
+            <!-- Bouton burger pour mobile -->
+            <div class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Navigation centrée -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="./index.html">Commandes</a></li>
+                    <li><a href="../Page_VsCode/index.html">VS Code</a></li>
+                    <li><a href="../A_propos/a_propos.html">A Propos</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Contrôles alignés à droite -->
+            <div class="div2-logo-gitmaster">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="darkmode-toggle" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
     </header>
 
-    <section class="quick-commands" >
-    <div class="command-card"  id="card-git-init" style=" display: none;" >
-        <h2>git init</h2>
-        <p>Initialise un nouveau dépôt Git local dans 
-            le répertoire courant. Crée le sous-dossier .git.</p>
+    <section class="heros-section">
+        <div class="heros-content">
+            <h1>Découvrir les commandes GitHub</h1>
+            <p>Plateforme pour apprendre Git et GitHub sans la complexité du terminal.</p>
+            <div class="search-bar-container">
+                <div class="search-input-group">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="git init, git add, git commit">
+                </div>
+                <button class="search-button">Rechercher</button>
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="quick-commands">
+        <div class="command-card" id="card-git-init" style=" display: none;">
+            <h2>git init</h2>
+            <p>Initialise un nouveau dépôt Git local dans
+                le répertoire courant. Crée le sous-dossier .git.</p>
             <img src="images/image git init.jpeg" alt="Git Init Image">
-    </div>
-    <div class="command-card" id="card-git-clone" style=" display: none;" >
-        <h2>git clone [url]</h2>
-        <p>Copie un dépôt Git distant (ex: GitHub) vers votre machine locale. Télécharge le projet et son historique.</p>
-        <img src="images/Image git clone.jpeg" alt="Git Clone Image">
-    </div>
-    <div class="command-card" id="card-git-add" style=" display: none;">
-        <h2>git add .</h2>
-        <p>Ajoute les fichiers modifiés à la zone de préparation (staging area), les préparant pour le commit suivant.</p>
-        <img src="images/Image  git add.jpeg" alt="Git Add Image">
-    </div>
-    <div class="command-card" id="card-git-status" style=" display: none;">
-        <h2>git status</h2>
-        <p>Affiche l'état de votre dépôt : les fichiers modifiés, ceux en attente de commit, et les nouveaux fichiers non suivis.</p>
-        <img src="images/Image git  status.jpeg" alt="Git Status Image">
-    </div>
-    <div class="command-card" id="card-git-commit" style=" display: none;">
-        <h2>git commit -m "[message]"</h2>
-        <p>Enregistre un instantané de votre projet. Les fichiers de la zone de préparation sont stockés dans le dépôt local.</p>
-        <img src="images/Image git commit.jpeg" alt="Git Commit Image">
-    </div>
-    <div class="command-card" id="card-git-push" style=" display: none;">
-        <h2>git push [remote] [branche]</h2>
-        <p>Envoie vos commits locaux vers un dépôt distant. Synchronise votre travail avec celui de votre équipe.</p>
-        <img src="images/Image  git push.jpeg" alt="Git Push Image">
-    </div>
-    <div class="command-card" id="card-git-pull" style=" display: none;">
-        <h2>git pull [remote] [branche]</h2>
-        <p>Récupère les modifications du dépôt distant et les fusionne automatiquement dans votre branche locale.</p>
-        <img src="images/Image git pull.jpeg" alt="Git Pull Image">
-    </div>
-    <div class="command-card" id="card-git-branch" style=" display: none;">
-        <h2>git branch</h2>
-        <p>Affiche la liste de toutes les branches du dépôt. Permet de voir la branche active.</p>
-        <img src="images/Image git branch.jpeg git branch.jpeg" alt="Git Branch Image">
-    </div>
-    <div class="command-card" id="card-git-checkout" style=" display: none;">
-        <h2>git checkout [nom-branche]</h2>
-        <p>Change de branche. Met à jour les fichiers de votre répertoire de travail pour correspondre à la nouvelle branche.</p>
-        <img src="images/Image  git checkout.jpeg git checkout.jpeg" alt="Git Checkout Image">
-    </div>
-    <div class="command-card" id="card-git-merge" style=" display: none;">
-        <h2>git merge [branche]</h2>
-        <p>Intègre les modifications d'une branche spécifiée dans la branche sur laquelle vous êtes actuellement.</p>
-        <img src="images/Image git merge.jpeg" alt="Git Merge Image">
-    </div>
-    <div class="command-card" id="card-git-log" style=" display: none;">
-        <h2>git log</h2>
-        <p>Affiche l'historique complet des commits de la branche actuelle. Montre qui, quoi et quand les changements ont été faits.</p>
-        <img src="images/Image git log.jpeg" alt="Git Log Image">
-    </div>
-    <div class="command-card" id="card-git-reset" style=" display: none;">
-        <h2>git reset [commit]</h2>
-        <p>Réinitialise la branche actuelle à un commit spécifique. Peut modifier l'historique des commits.</p>
-        <img src="images/Image git reset.jpeg" alt="Git Reset Image">
-    </div>
-    <div class="command-card" id="card-git-diff" style=" display: none;">
-<h2>git diff</h2>
-<p>Affiche les modifications qui ne sont pas encore dans la zone de préparation (staging area).</p>
-<img src="images/Image git diff.jpeg" alt="Git Diff Image">
-</div>
+        </div>
+        <div class="command-card" id="card-git-clone" style=" display: none;">
+            <h2>git clone [url]</h2>
+            <p>Copie un dépôt Git distant (ex: GitHub) vers votre machine locale. Télécharge le projet et son
+                historique.</p>
+            <img src="images/Image git clone.jpeg" alt="Git Clone Image">
+        </div>
+        <div class="command-card" id="card-git-add" style=" display: none;">
+            <h2>git add .</h2>
+            <p>Ajoute les fichiers modifiés à la zone de préparation (staging area), les préparant pour le commit
+                suivant.</p>
+            <img src="images/Image  git add.jpeg" alt="Git Add Image">
+        </div>
+        <div class="command-card" id="card-git-status" style=" display: none;">
+            <h2>git status</h2>
+            <p>Affiche l'état de votre dépôt : les fichiers modifiés, ceux en attente de commit, et les nouveaux
+                fichiers non suivis.</p>
+            <img src="images/Image git  status.jpeg" alt="Git Status Image">
+        </div>
+        <div class="command-card" id="card-git-commit" style=" display: none;">
+            <h2>git commit -m "[message]"</h2>
+            <p>Enregistre un instantané de votre projet. Les fichiers de la zone de préparation sont stockés dans le
+                dépôt local.</p>
+            <img src="images/Image git commit.jpeg" alt="Git Commit Image">
+        </div>
+        <div class="command-card" id="card-git-push" style=" display: none;">
+            <h2>git push [remote] [branche]</h2>
+            <p>Envoie vos commits locaux vers un dépôt distant. Synchronise votre travail avec celui de votre équipe.
+            </p>
+            <img src="images/Image  git push.jpeg" alt="Git Push Image">
+        </div>
+        <div class="command-card" id="card-git-pull" style=" display: none;">
+            <h2>git pull [remote] [branche]</h2>
+            <p>Récupère les modifications du dépôt distant et les fusionne automatiquement dans votre branche locale.
+            </p>
+            <img src="images/Image git pull.jpeg" alt="Git Pull Image">
+        </div>
+        <div class="command-card" id="card-git-branch" style=" display: none;">
+            <h2>git branch</h2>
+            <p>Affiche la liste de toutes les branches du dépôt. Permet de voir la branche active.</p>
+            <img src="images/Image git branch.jpeg git branch.jpeg" alt="Git Branch Image">
+        </div>
+        <div class="command-card" id="card-git-checkout" style=" display: none;">
+            <h2>git checkout [nom-branche]</h2>
+            <p>Change de branche. Met à jour les fichiers de votre répertoire de travail pour correspondre à la nouvelle
+                branche.</p>
+            <img src="images/Image  git checkout.jpeg git checkout.jpeg" alt="Git Checkout Image">
+        </div>
+        <div class="command-card" id="card-git-merge" style=" display: none;">
+            <h2>git merge [branche]</h2>
+            <p>Intègre les modifications d'une branche spécifiée dans la branche sur laquelle vous êtes actuellement.
+            </p>
+            <img src="images/Image git merge.jpeg" alt="Git Merge Image">
+        </div>
+        <div class="command-card" id="card-git-log" style=" display: none;">
+            <h2>git log</h2>
+            <p>Affiche l'historique complet des commits de la branche actuelle. Montre qui, quoi et quand les
+                changements ont été faits.</p>
+            <img src="images/Image git log.jpeg" alt="Git Log Image">
+        </div>
+        <div class="command-card" id="card-git-reset" style=" display: none;">
+            <h2>git reset [commit]</h2>
+            <p>Réinitialise la branche actuelle à un commit spécifique. Peut modifier l'historique des commits.</p>
+            <img src="images/Image git reset.jpeg" alt="Git Reset Image">
+        </div>
+        <div class="command-card" id="card-git-diff" style=" display: none;">
+            <h2>git diff</h2>
+            <p>Affiche les modifications qui ne sont pas encore dans la zone de préparation (staging area).</p>
+            <img src="images/Image git diff.jpeg" alt="Git Diff Image">
+        </div>
 
-<div class="command-card" id="card-git-rebase" style=" display: none;">
-<h2>git rebase [nom-branche]</h2>
-<p>Intègre les modifications d'une branche dans une autre en rejouant les commits, pour un historique propre.</p>
-<img src="images/image git rebase.jpeg" alt="Git Rebase Image">
-</div>
+        <div class="command-card" id="card-git-rebase" style=" display: none;">
+            <h2>git rebase [nom-branche]</h2>
+            <p>Intègre les modifications d'une branche dans une autre en rejouant les commits, pour un historique
+                propre.</p>
+            <img src="images/image git rebase.jpeg" alt="Git Rebase Image">
+        </div>
 
-<div class="command-card" id="card-git-stash" style=" display: none;">
-<h2>git stash</h2>
-<p>Met de côté temporairement les modifications non validées pour pouvoir changer de branche rapidement.</p>
-<img src="images/image git stash.jpeg" alt="Git Stash Image">
-</div>
+        <div class="command-card" id="card-git-stash" style=" display: none;">
+            <h2>git stash</h2>
+            <p>Met de côté temporairement les modifications non validées pour pouvoir changer de branche rapidement.</p>
+            <img src="images/image git stash.jpeg" alt="Git Stash Image">
+        </div>
 
-<div class="command-card" id="card-git-tag" style=" display: none;">
-<h2>git tag [nom-tag]</h2>
-<p>Crée une étiquette pour marquer des points importants dans l'historique du projet, comme une nouvelle version.</p>
-<img src="images/image git tag.jpeg" alt="Git Tag Image">
-</div>
+        <div class="command-card" id="card-git-tag" style=" display: none;">
+            <h2>git tag [nom-tag]</h2>
+            <p>Crée une étiquette pour marquer des points importants dans l'historique du projet, comme une nouvelle
+                version.</p>
+            <img src="images/image git tag.jpeg" alt="Git Tag Image">
+        </div>
 
-<div class="command-card" id="card-git-revert" style=" display: none;">
-<h2>git revert [hash-commit]</h2>
-<p>Annule les modifications d'un commit en créant un nouveau commit, sans modifier l'historique.</p>
-<img src="images/image git revert.jpeg" alt="Git Revert Image">
-</div>
+        <div class="command-card" id="card-git-revert" style=" display: none;">
+            <h2>git revert [hash-commit]</h2>
+            <p>Annule les modifications d'un commit en créant un nouveau commit, sans modifier l'historique.</p>
+            <img src="images/image git revert.jpeg" alt="Git Revert Image">
+        </div>
 
-<div class="command-card" id="card-git-config" style=" display: none;">
-<h2>git config</h2>
-<p>Permet de configurer l'identité de l'utilisateur et d'autres paramètres pour le dépôt ou de manière globale.</p>
-<img src="images/image git config.jpeg" alt="Git Config Image">
-</div>
-<div class="command-card" id="card-git-checkout-b" style=" display: none;">
-<h2>git checkout -b [nom-nouvelle-branche]</h2>
-<p>Crée et passe immédiatement à une nouvelle branche.</p>
-<img src="images/image git checkout b.jpeg" alt="Git Checkout b Image">
-</div>
-<div class="command-card" id="card-git-remote-v" style=" display: none;">
-<h2>git remote -v</h2>
-<p>Affiche la liste des dépôts distants configurés avec leurs URL.</p>
-<img src="images/image git remote.jpeg" alt="Git Remote Image">
-</div>
-<div class="command-card" id="card-git-fetch" style=" display: none;">
-<h2>git fetch [remote]</h2>
-<p>Télécharge les dernières modifications d'un dépôt distant, sans les intégrer à votre branche locale.</p>
-<img src="images/image git fetch.jpeg" alt="Git Fetch Image">
-</div>
-    
- 
-    
-     
-    
-</section>
+        <div class="command-card" id="card-git-config" style=" display: none;">
+            <h2>git config</h2>
+            <p>Permet de configurer l'identité de l'utilisateur et d'autres paramètres pour le dépôt ou de manière
+                globale.</p>
+            <img src="images/image git config.jpeg" alt="Git Config Image">
+        </div>
+        <div class="command-card" id="card-git-checkout-b" style=" display: none;">
+            <h2>git checkout -b [nom-nouvelle-branche]</h2>
+            <p>Crée et passe immédiatement à une nouvelle branche.</p>
+            <img src="images/image git checkout b.jpeg" alt="Git Checkout b Image">
+        </div>
+        <div class="command-card" id="card-git-remote-v" style=" display: none;">
+            <h2>git remote -v</h2>
+            <p>Affiche la liste des dépôts distants configurés avec leurs URL.</p>
+            <img src="images/image git remote.jpeg" alt="Git Remote Image">
+        </div>
+        <div class="command-card" id="card-git-fetch" style=" display: none;">
+            <h2>git fetch [remote]</h2>
+            <p>Télécharge les dernières modifications d'un dépôt distant, sans les intégrer à votre branche locale.</p>
+            <img src="images/image git fetch.jpeg" alt="Git Fetch Image">
+        </div>
+
+
+
+
+
+    </section>
 
 
     <section class="command-intro">
-        <h3> Les commandes sont regroupées par référence et par fonction.  </h3> 
-         <p>   Cette section présente une liste des commandes Git et GitHub les plus utilisées, 
-            classées par catégories. Chaque catégorie inclut des commandes spécifiques accompagnées de descriptions et d'exemples pratiques.
-             Vous pouvez cliquer sur une commande pour obtenir plus de détails.
-        </p>  
+        <h3> Les commandes sont regroupées par référence et par fonction. </h3>
+        <p> Cette section présente une liste des commandes Git et GitHub les plus utilisées,
+            classées par catégories. Chaque catégorie inclut des commandes spécifiques accompagnées de descriptions et
+            d'exemples pratiques.
+            Vous pouvez cliquer sur une commande pour obtenir plus de détails.
+        </p>
     </section>
 
-<main>
-    <aside class="command-list">
-        <h2>Référence rapide</h2>
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="#initialisation-git-section" id="link-initialisation">INITIALISATION</a></li>
-                <li><a href="#configuration-git-section" id="link-configuration">CONFIGURATION DE GIT</a></li>
-                <li><a href="#verification-configuration-section" id="link-verification">VÉRIFIER LA CONFIGURATION</a></li>
-                <li><a href="#depot-git-section" id="link-depot">DÉPÔT GIT</a></li>
-                <li><a href="#initialisation-depot-non-versionne-section" id="link-init-non-versionne">INITIALISATION D'UN DÉPÔT GIT</a></li>
-                <li><a href="#preparation-modifications-section" id="link-preparation-modifs">PRÉPARATION DES MODIFICATIONS</a></li>
-                <li><a href="#etat-modifications-section" id="link-etat-modifs">ÉTAT ET MODIFICATIONS</a></li>
-                <li><a href="#voir-modifications-section" id="link-voir-modifs">MODIFICATIONS</a></li>
-                <li><a href="#creer-commit-section" id="link-creer-commit">CRÉER UN COMMIT</a></li>
-                <li><a href="#gestion-branches-section" id="link-gestion-branches">GESTION DES BRANCHES</a></li>
-                <li><a href="#changer-branche-section" id="link-changer-branche">CHANGER DE BRANCHE</a></li>
-                <li><a href="#renommer-branche-section" id="link-renommer-branche">RENOMMER UNE BRANCHE</a></li>
-                <li><a href="#supprimer-branche-section" id="link-supprimer-branche">SUPPRIMER UNE BRANCHE</a></li>
-                <li><a href="#fusionner-branches-section" id="link-fusionner-branches">FUSIONNER DES BRANCHES</a></li>
-                <li><a href="#cloner-depot-section" id="link-cloner-depot">CLONER UN DÉPÔT</a></li>
-                <li><a href="#travail-collaboratif-section" id="link-travail-collaboratif">TRAVAIL COLLABORATIF</a></li>
-            </ul>
-        </div>
-    </aside>
-
-    <section class="command-description">
-        <div class="descrip-command" id="initialisation-git-section">
-            <div class="configuration">
-                <h1>INITIALISATION DE GIT</h1>
-                <p>Que vous soyez sur Windows, MacOS ou encore Linux, vous pouvez <a href="https://git-scm.com/downloads" target="_blank">télécharger Git</a> depuis le site officiel en choisissant la méthode adaptée à votre OS et à vos envies (ligne de commande, fichier binaire…).</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-download"></i>
-                    <p>
-                        <a href="https://git-scm.com/downloads" target="_blank">Télécharger Git</a>
-                    </p>
-                </div>
+    <main>
+        <aside class="command-list">
+            <h2>Référence rapide</h2>
+            <div class="container">
+                <ul class="nav-list">
+                    <li class="item" ><a href="#initialisation-git-section" id="link-initialisation">INITIALISATION</a></li>
+                    <li class="item" ><a href="#configuration-git-section" id="link-configuration">CONFIGURATION DE GIT</a></li>
+                    <li class="item" ><a href="#verification-configuration-section" id="link-verification">VÉRIFIER LA
+                            CONFIGURATION</a></li>
+                    <li class="item" ><a href="#depot-git-section" id="link-depot">DÉPÔT GIT</a></li>
+                    <li class="item" ><a href="#initialisation-depot-non-versionne-section"
+                            id="link-init-non-versionne">INITIALISATION D'UN DÉPÔT GIT</a></li>
+                    <li class="item" ><a href="#preparation-modifications-section" id="link-preparation-modifs">PRÉPARATION DES
+                            MODIFICATIONS</a></li>
+                    <li class="item" ><a href="#etat-modifications-section" id="link-etat-modifs">ÉTAT ET MODIFICATIONS</a></li>
+                    <li class="item" ><a href="#voir-modifications-section" id="link-voir-modifs">MODIFICATIONS</a></li>
+                    <li class="item" ><a href="#creer-commit-section" id="link-creer-commit">CRÉER UN COMMIT</a></li>
+                    <li class="item" ><a href="#gestion-branches-section" id="link-gestion-branches">GESTION DES BRANCHES</a></li>
+                    <li class="item" ><a href="#changer-branche-section" id="link-changer-branche">CHANGER DE BRANCHE</a></li>
+                    <li class="item" ><a href="#renommer-branche-section" id="link-renommer-branche">RENOMMER UNE BRANCHE</a></li>
+                    <li class="item" ><a href="#supprimer-branche-section" id="link-supprimer-branche">SUPPRIMER UNE BRANCHE</a></li>
+                    <li class="item" ><a href="#fusionner-branches-section" id="link-fusionner-branches">FUSIONNER DES BRANCHES</a>
+                    </li>
+                    <li class="item" ><a href="#cloner-depot-section" id="link-cloner-depot">CLONER UN DÉPÔT</a></li>
+                    <li class="item" ><a href="#travail-collaboratif-section" id="link-travail-collaboratif">TRAVAIL COLLABORATIF</a>
+                    </li>
+                </ul>
             </div>
-            <p>Une fois l'installation terminée, vérifiez que Git est bien opérationnel
-                sur votre machine en ouvrant un terminal et en tapant la commande suivante</p>
-            <div class="descript-image">
-                <img src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg" alt="image de la commande de vérification"/>
-            </div>
-           
-        </div>
+        </aside>
 
-        <div class="descrip-command" id="configuration-git-section">
-            <div class="configuration">
-                <h1>CONFIGURATION DE GIT</h1>
-                <p>Avant de commencer à utiliser Git, il est important de configurer votre identité.
-                    Cela permet d'associer vos commits à votre nom et adresse e-mail.</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-cog"></i>
-                    <p>Configurer votre nom d'utilisateur et votre adresse e-mail :</p>
+        <section class="command-description">
+            <div class="descrip-command" id="initialisation-git-section">
+                <div class="configuration">
+                    <h1>INITIALISATION DE GIT</h1>
+                    <p>Que vous soyez sur Windows, MacOS ou encore Linux, vous pouvez <a
+                            href="https://git-scm.com/downloads" target="_blank">télécharger Git</a> depuis le site
+                        officiel en choisissant la méthode adaptée à votre OS et à vos envies (ligne de commande,
+                        fichier binaire…).</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-download"></i>
+                        <p>
+                            <a href="https://git-scm.com/downloads" target="_blank">Télécharger Git</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="code-block">
-                    <pre><code>
+                <p>Une fois l'installation terminée, vérifiez que Git est bien opérationnel
+                    sur votre machine en ouvrant un terminal et en tapant la commande suivante</p>
+                <div class="descript-image">
+                    <img src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg"
+                        alt="image de la commande de vérification" />
+                </div>
+
+            </div>
+
+            <div class="descrip-command" id="configuration-git-section">
+                <div class="configuration">
+                    <h1>CONFIGURATION DE GIT</h1>
+                    <p>Avant de commencer à utiliser Git, il est important de configurer votre identité.
+                        Cela permet d'associer vos commits à votre nom et adresse e-mail.</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-cog"></i>
+                        <p>Configurer votre nom d'utilisateur et votre adresse e-mail :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git config --global user.name "Votre Nom"
 git config --global user.email "votre.email@example.com"
                     </code></pre>
+                    </div>
+                </div>
+                <div class="descript-image">
+                    <img src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg"
+                        alt="image de la commande de vérification" />
                 </div>
             </div>
-            <div class="descript-image">
-                <img src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg" alt="image de la commande de vérification"/>
-            </div>
-        </div>
-        <div class="descrip-command" id="verification-configuration-section">
-            <div class="configuration">
-                <h1>VÉRIFICATION DE LA CONFIGURATION</h1>
-                <p>Pour vérifier que votre configuration a été correctement appliquée, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-check-circle"></i>
-                    <p>Vérifier la configuration actuelle :</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="verification-configuration-section">
+                <div class="configuration">
+                    <h1>VÉRIFICATION DE LA CONFIGURATION</h1>
+                    <p>Pour vérifier que votre configuration a été correctement appliquée, utilisez la commande suivante
+                        :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-check-circle"></i>
+                        <p>Vérifier la configuration actuelle :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git config --list
                     </code></pre>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="depot-git-section">
-            <h1>Ce qu'il faut savoir sur la structure d'un dépôt Git</h1>
-            <p>Un dépôt Git se compose de plusieurs éléments clés :</p>
-            <ul>
-                <li>Le <strong>code source</strong> contenant le projet</li>
-                <li>Un <strong>dossier caché nommé</strong> <span>📂 .git</span>
-                    présent à la racine du répertoire d'un projet, dans lequel Git
-                    <strong>enregistre l'historique des modifications du projet</strong>. Il agit comme
-                    <strong>une base de données qui stocke toutes les versions passées et présentes</strong>
-                    des fichiers du projet. Cela permet de suivre l'évolution du projet au fil du temps,
-                    de revenir à des versions antérieures si nécessaire et de collaborer avec d'autres développeurs.
-                </li>
-                <p>Pour bien cerner la notion de dépôt Git, il est important de distinguer 2 types de dépôts : les <strong>dépôts locaux</strong> et le <strong>dépôt distant</strong>.</p>
-                <h2>Dépôt Local</h2>
-                <li>Un <strong>dépôt local</strong> est le dépôt Git qui se trouve sur votre machine.
-                    C'est là que vous effectuez vos modifications, vos commits et vos tests avant de les envoyer vers un dépôt distant.
-                    c'est un espace de travail où vous pouvez développer votre projet en toute liberté,
-                    sans affecter les autres développeurs.
-                </li>
-                <h2>Dépôt Distant</h2>
-                <li>Un <strong>dépôt distant</strong> est un dépôt Git qui est hébergé sur un serveur;par exemple (<span>GitHub, GitLab, Bitbucket</span>).
-                    C'est là que vous partagez votre code avec d'autres développeurs,
-                    la sauvegarde du code source
-                    garder un historique des modifications et où vous pouvez collaborer sur des projets.
-                </li>
-            </ul>
-            <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg" alt="image de la structure d'un dépôt Git">
-        </div>
-        <div class="descrip-command" id="initialisation-depot-non-versionne-section">
-            <h1>INITIALISATION D'UN DÉPÔT GIT non versionné</h1>
-            <p>Pour initialiser un nouveau dépôt Git dans un répertoire existant, utilisez la commande suivante :</p>
-            <div class="callout-content">
-                <i class="callout-icon fa-lg fa-solid fa-folder-plus"></i>
-                <p>Initialiser un dépôt Git :</p>
+            <div class="descrip-command" id="depot-git-section">
+                <h1>Ce qu'il faut savoir sur la structure d'un dépôt Git</h1>
+                <p>Un dépôt Git se compose de plusieurs éléments clés :</p>
+                <ul>
+                    <li>Le <strong>code source</strong> contenant le projet</li>
+                    <li>Un <strong>dossier caché nommé</strong> <span>📂 .git</span>
+                        présent à la racine du répertoire d'un projet, dans lequel Git
+                        <strong>enregistre l'historique des modifications du projet</strong>. Il agit comme
+                        <strong>une base de données qui stocke toutes les versions passées et présentes</strong>
+                        des fichiers du projet. Cela permet de suivre l'évolution du projet au fil du temps,
+                        de revenir à des versions antérieures si nécessaire et de collaborer avec d'autres développeurs.
+                    </li>
+                    <p>Pour bien cerner la notion de dépôt Git, il est important de distinguer 2 types de dépôts : les
+                        <strong>dépôts locaux</strong> et le <strong>dépôt distant</strong>.
+                    </p>
+                    <h2>Dépôt Local</h2>
+                    <li>Un <strong>dépôt local</strong> est le dépôt Git qui se trouve sur votre machine.
+                        C'est là que vous effectuez vos modifications, vos commits et vos tests avant de les envoyer
+                        vers un dépôt distant.
+                        c'est un espace de travail où vous pouvez développer votre projet en toute liberté,
+                        sans affecter les autres développeurs.
+                    </li>
+                    <h2>Dépôt Distant</h2>
+                    <li>Un <strong>dépôt distant</strong> est un dépôt Git qui est hébergé sur un serveur;par exemple
+                        (<span>GitHub, GitLab, Bitbucket</span>).
+                        C'est là que vous partagez votre code avec d'autres développeurs,
+                        la sauvegarde du code source
+                        garder un historique des modifications et où vous pouvez collaborer sur des projets.
+                    </li>
+                </ul>
+                <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg"
+                    alt="image de la structure d'un dépôt Git">
             </div>
-            <div class="code-block">
-                <pre><code>
+            <div class="descrip-command" id="initialisation-depot-non-versionne-section">
+                <h1>INITIALISATION D'UN DÉPÔT GIT non versionné</h1>
+                <p>Pour initialiser un nouveau dépôt Git dans un répertoire existant, utilisez la commande suivante :
+                </p>
+                <div class="callout-content">
+                    <i class="callout-icon fa-lg fa-solid fa-folder-plus"></i>
+                    <p>Initialiser un dépôt Git :</p>
+                </div>
+                <div class="code-block">
+                    <pre><code>
 git init
                 </code></pre>
+                </div>
+                <p>Cette commande crée un nouveau sous-répertoire nommé <span>.git</span> dans le répertoire actuel,
+                    qui contient tous les fichiers nécessaires à la gestion du dépôt Git.
+                    Vous pouvez ensuite commencer à ajouter des fichiers et à effectuer des commits.</p>
+                <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg"
+                    alt="image de la structure d'un dépôt Git">
             </div>
-            <p>Cette commande crée un nouveau sous-répertoire nommé <span>.git</span> dans le répertoire actuel,
-                qui contient tous les fichiers nécessaires à la gestion du dépôt Git.
-                Vous pouvez ensuite commencer à ajouter des fichiers et à effectuer des commits.</p>
-            <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg" alt="image de la structure d'un dépôt Git">
-        </div>
-        <div class="descrip-command" id="preparation-modifications-section">
-            git add .
-            <h1>PREPARATION DES MODIFICATIONS</h1>
-            <div class="callout-content">
-                <i class="callout-icon fa-lg fa-solid fa-folder-plus"></i>
-            </div>
-            <div class="code-block">
-                <pre><code>
+            <div class="descrip-command" id="preparation-modifications-section">
+                git add .
+                <h1>PREPARATION DES MODIFICATIONS</h1>
+                <div class="callout-content">
+                    <i class="callout-icon fa-lg fa-solid fa-folder-plus"></i>
+                </div>
+                <div class="code-block">
+                    <pre><code>
 git add . ou git add "nom_du_fichier" ou git add *
                 </code></pre>
-            </div>
-            <p>Cette commande git add .permet de préparer toutes les modifications du répertoire courant et de ses sous-répertoires pour le prochain commit. C'est une commande fondamentale du workflow Git,
-                servant de passerelle entre votre répertoire de travail et la zone de préparation.</p>
-            <span>Comprendre le workflow Git</span>
-            <p>Pour bien comprendre l'objectif de git add; il est utile de comprendre les trois principaux états d'un projet Git:</p>
-            <ul>
-                <li><strong>Répertoire de travail:</strong> c'est ici que vous modifiez vos fichiers. Il contient les fichiers en cours de modification.</li>
-                <li><strong>Zone de préparation (ou index):</strong> Il s'agit d'une solution intermédiaire où vous préparez un instantané de vos modifications avant de les valider. Considérez-la comme une zone de stockage temporaire où vous sélectionnez les modifications spécifiques à inclure dans votre prochain commit.</li>
-                <li><strong>Référentiel Git (Historique):</strong> c'est ici que Git stocke vos commits, qui sont des instantanés permanents de votre projet.</li>
-            </ul>
-            <h2>Comment ça git add . marche</h2>
-            <p>Lorsque vous modifiez, ajoutez ou supprimez des fichiers dans votre répertoire de travail, Git considère ces modifications comme « non suivies » ou « non mises en scène ».</p>
-            <p>La git add . commande effectue les opérations suivantes:</p>
-            <p> Il indique à Git de regarder tous les fichiers nouveaux et modifiés dans votre répertoire actuel et tous les sous-répertoires.</p>
-            <p>Il déplace ensuite ces modifications du répertoire de travail vers la zone de préparation.</p>
-            <p>Cela signifie que toutes les modifications que vous avez apportées sont désormais « préparées », prêtes à être enregistrées sous forme d'instantané unique et cohérent lors de l'exécution de la git commit commande.</p>
-            <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg" alt="image de la structure d'un dépôt Git">
-        </div>
-        <div class="descrip-command" id="etat-modifications-section">
-            <div class="configuration">
-                <h1>ÉTAT ET MODIFICATIONS</h1>
-                <p>Pour vérifier l'état de votre dépôt Git et voir les modifications apportées, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Vérifier l'état du dépôt :</p>
                 </div>
-                <div class="code-block">
-                    <pre><code>
+                <p>Cette commande git add .permet de préparer toutes les modifications du répertoire courant et de ses
+                    sous-répertoires pour le prochain commit. C'est une commande fondamentale du workflow Git,
+                    servant de passerelle entre votre répertoire de travail et la zone de préparation.</p>
+                <span>Comprendre le workflow Git</span>
+                <p>Pour bien comprendre l'objectif de git add; il est utile de comprendre les trois principaux états
+                    d'un projet Git:</p>
+                <ul>
+                    <li><strong>Répertoire de travail:</strong> c'est ici que vous modifiez vos fichiers. Il contient
+                        les fichiers en cours de modification.</li>
+                    <li><strong>Zone de préparation (ou index):</strong> Il s'agit d'une solution intermédiaire où vous
+                        préparez un instantané de vos modifications avant de les valider. Considérez-la comme une zone
+                        de stockage temporaire où vous sélectionnez les modifications spécifiques à inclure dans votre
+                        prochain commit.</li>
+                    <li><strong>Référentiel Git (Historique):</strong> c'est ici que Git stocke vos commits, qui sont
+                        des instantanés permanents de votre projet.</li>
+                </ul>
+                <h2>Comment ça git add . marche</h2>
+                <p>Lorsque vous modifiez, ajoutez ou supprimez des fichiers dans votre répertoire de travail, Git
+                    considère ces modifications comme « non suivies » ou « non mises en scène ».</p>
+                <p>La git add . commande effectue les opérations suivantes:</p>
+                <p> Il indique à Git de regarder tous les fichiers nouveaux et modifiés dans votre répertoire actuel et
+                    tous les sous-répertoires.</p>
+                <p>Il déplace ensuite ces modifications du répertoire de travail vers la zone de préparation.</p>
+                <p>Cela signifie que toutes les modifications que vous avez apportées sont désormais « préparées »,
+                    prêtes à être enregistrées sous forme d'instantané unique et cohérent lors de l'exécution de la git
+                    commit commande.</p>
+                <img class="img-structure" src="./images/WhatsApp Image 2025-08-11 at 19.16.52.jpeg"
+                    alt="image de la structure d'un dépôt Git">
+            </div>
+            <div class="descrip-command" id="etat-modifications-section">
+                <div class="configuration">
+                    <h1>ÉTAT ET MODIFICATIONS</h1>
+                    <p>Pour vérifier l'état de votre dépôt Git et voir les modifications apportées, utilisez la commande
+                        suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Vérifier l'état du dépôt :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git status
                     </code></pre>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="voir-modifications-section">
-            <div class="configuration">
-                <h1>MODIFICATIONS</h1>
-                <p>Pour voir les modifications apportées à votre dépôt, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-pencil-alt"></i>
-                    <p>Afficher les modifications :</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="voir-modifications-section">
+                <div class="configuration">
+                    <h1>MODIFICATIONS</h1>
+                    <p>Pour voir les modifications apportées à votre dépôt, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-pencil-alt"></i>
+                        <p>Afficher les modifications :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git diff
                     </code></pre>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="creer-commit-section">
-            <div class="configuration">
-                <h1>CREER UN COMMIT</h1>
-                <p>Utilise l'impératif : "Ajouter", "Corriger", "Mettre à jour", etc.</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Valider les modifications dans le dépôt :</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="creer-commit-section">
+                <div class="configuration">
+                    <h1>CREER UN COMMIT</h1>
+                    <p>Utilise l'impératif : "Ajouter", "Corriger", "Mettre à jour", etc.</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Valider les modifications dans le dépôt :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git commit -m "Votre message de commit"
                     </code></pre>
-                    <p>La commande git commit est l'une des plus fondamentales dans Git. Elle permet d'enregistrer de façon permanente un instantané (snapshot) de l'état de ton projet à un moment donné dans l'historique du dépôt. <br>
-                        🔹 Un commit n'est pas simplement une liste de modifications (comme dans certains anciens systèmes de version), <br>
-                        🔹 C'est un point de sauvegarde complet de tous les fichiers suivis à cet instant.
-                    </p>
-                    <img class="img-structure" src="./images/git-commit.webp" alt="image git commit">
+                        <p>La commande git commit est l'une des plus fondamentales dans Git. Elle permet d'enregistrer
+                            de façon permanente un instantané (snapshot) de l'état de ton projet à un moment donné dans
+                            l'historique du dépôt. <br>
+                            🔹 Un commit n'est pas simplement une liste de modifications (comme dans certains anciens
+                            systèmes de version), <br>
+                            🔹 C'est un point de sauvegarde complet de tous les fichiers suivis à cet instant.
+                        </p>
+                        <img class="img-structure" src="./images/git-commit.webp" alt="image git commit">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="structure-commit-section">
-            <div class="configuration">
-                <h1>STRUCTURE INTERNE D'UN COMMIT</h1>
-                <p>Chaque commit est identifié par un hash SHA-1 (ex: a1b2c3d...) et contient :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Un commit contient: le hash, le message, l'auteur, la date, l'instantané des fichiers et la référence au commit parent.</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="structure-commit-section">
+                <div class="configuration">
+                    <h1>STRUCTURE INTERNE D'UN COMMIT</h1>
+                    <p>Chaque commit est identifié par un hash SHA-1 (ex: a1b2c3d...) et contient :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Un commit contient: le hash, le message, l'auteur, la date, l'instantané des fichiers et la
+                            référence au commit parent.</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
                     </code></pre>
-                    <p>Un arbre (tree) : référence à la structure des fichiers à cet instant. <br>
-                        Des parents : référence au(x) commit(s) précédent(s) (1 pour un commit normal, 2 pour un merge). <br>
-                        Un auteur : qui a créé les modifications. <br>
-                        Un committer : qui a effectué le commit (souvent la même personne). <br>
-                        Un message : description du changement. <br>
-                        Une date : timestamp de création.
-                    </p>
+                        <p>Un arbre (tree) : référence à la structure des fichiers à cet instant. <br>
+                            Des parents : référence au(x) commit(s) précédent(s) (1 pour un commit normal, 2 pour un
+                            merge). <br>
+                            Un auteur : qui a créé les modifications. <br>
+                            Un committer : qui a effectué le commit (souvent la même personne). <br>
+                            Un message : description du changement. <br>
+                            Une date : timestamp de création.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="gestion-branches-section">
-            <div class="configuration">
-                <h1>GESTION DES BRANCHES</h1>
-                <p>Pour afficher la liste des branches dans votre dépôt Git, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Un pointeur léger et nommé vers un commit spécifique est:</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="gestion-branches-section">
+                <div class="configuration">
+                    <h1>GESTION DES BRANCHES</h1>
+                    <p>Pour afficher la liste des branches dans votre dépôt Git, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Un pointeur léger et nommé vers un commit spécifique est:</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git branch
                     </code></pre>
-                    <p>
-                        La commande git branch permet de lister, créer ou supprimer des branches dans votre dépôt. <br>
-                        🔹 Les branches sont des pointeurs vers des commits spécifiques. <br>
-                        🔹 La branche active est celle sur laquelle vous travaillez actuellement.
-                    </p>
+                        <p>
+                            La commande git branch permet de lister, créer ou supprimer des branches dans votre dépôt.
+                            <br>
+                            🔹 Les branches sont des pointeurs vers des commits spécifiques. <br>
+                            🔹 La branche active est celle sur laquelle vous travaillez actuellement.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="changer-branche-section">
-            <div class="configuration">
-                <h1>CHANGER DE BRANCHE</h1>
-                <p>Pour changer de branche, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>La commande à utiliser pour naviguer rapidement entre les branches existantes
-                        et vous positionner sur celle sur laquelle vous souhaitez travailler est :</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="changer-branche-section">
+                <div class="configuration">
+                    <h1>CHANGER DE BRANCHE</h1>
+                    <p>Pour changer de branche, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>La commande à utiliser pour naviguer rapidement entre les branches existantes
+                            et vous positionner sur celle sur laquelle vous souhaitez travailler est :</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git checkout nom-de-la-branche
                     </code></pre>
-                    <p>Listez les branches disponibles avec git branch. <br>
+                        <p>Listez les branches disponibles avec git branch. <br>
                         <pre><code>
 git branch 
                     </code></pre>
                         Identifiez le nom de la branche vers laquelle vous souhaitez basculer. <br>
                         Utilisez la commande git checkout nom-de-la-branche pour passer sur cette branche.
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="renommer-branche-section">
-            <div class="configuration">
-                <h1>RENOMMER UNE BRANCHE</h1>
-                <p>Pour renommer une branche dans Git, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Renommer une branche ne change pas sa position dans l'historique :
-                        elle reste un pointeur vers le même commit, seul son nom est mis à jour:</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="renommer-branche-section">
+                <div class="configuration">
+                    <h1>RENOMMER UNE BRANCHE</h1>
+                    <p>Pour renommer une branche dans Git, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Renommer une branche ne change pas sa position dans l'historique :
+                            elle reste un pointeur vers le même commit, seul son nom est mis à jour:</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git branch -m "nouveau-nom"
                     </code></pre>
-                    <p>
-                        La commande git branch -m permet de renommer la branche active.<br>
-                        🔹 Si vous êtes sur la branche à renommer, il suffit de spécifier le nouveau nom.<br>
-                        🔹 Pour renommer une branche inactive : git branch -m "ancien-nom" "nouveau-nom".
-                    </p>
+                        <p>
+                            La commande git branch -m permet de renommer la branche active.<br>
+                            🔹 Si vous êtes sur la branche à renommer, il suffit de spécifier le nouveau nom.<br>
+                            🔹 Pour renommer une branche inactive : git branch -m "ancien-nom" "nouveau-nom".
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="supprimer-branche-section">
-            <div class="configuration">
-                <h1>SUPPRIMER UNE BRANCHE</h1>
-                <p>Pour supprimer une branche locale dans Git, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Supprimer une branche revient à supprimer un pointeur vers un historique de commits.
-                        Le contenu n'est perdu que si aucun autre pointeur (branche ou tag) ne le référence.</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="supprimer-branche-section">
+                <div class="configuration">
+                    <h1>SUPPRIMER UNE BRANCHE</h1>
+                    <p>Pour supprimer une branche locale dans Git, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Supprimer une branche revient à supprimer un pointeur vers un historique de commits.
+                            Le contenu n'est perdu que si aucun autre pointeur (branche ou tag) ne le référence.</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git branch -d "nom-de-la-branche"
                     </code></pre>
-                    <p>La commande git branch -d permet de supprimer une branche locale.<br>
-                        🔹 Le -d signifie delete (supprimer).<br>
-                        🔹 Git refuse par défaut de supprimer une branche non fusionnée pour éviter une perte de données.
-                    </p>
-                    <pre><code>
+                        <p>La commande git branch -d permet de supprimer une branche locale.<br>
+                            🔹 Le -d signifie delete (supprimer).<br>
+                            🔹 Git refuse par défaut de supprimer une branche non fusionnée pour éviter une perte de
+                            données.
+                        </p>
+                        <pre><code>
 git branch -D "nom-branche"
                     </code></pre>
-                    <p> Utilisez <code>-D</code> (en majuscule) pour forcer la suppression même si la branche n'a pas été fusionnée.<br>
-                        <strong>⚠️ Attention :</strong> cette action peut entraîner la perte de commits non fusionnés.
+                        <p> Utilisez <code>-D</code> (en majuscule) pour forcer la suppression même si la branche n'a
+                            pas été fusionnée.<br>
+                            <strong>⚠️ Attention :</strong> cette action peut entraîner la perte de commits non
+                            fusionnés.
+                        </p>
+                    </div>
+                    <p><strong>💡 Astuce :</strong> Avant de supprimer une branche,
+                        assurez-vous qu'elle a bien été fusionnée dans <code>main</code> ou
+                        <code>dev</code> pour ne rien perdre.
                     </p>
                 </div>
-                <p><strong>💡 Astuce :</strong> Avant de supprimer une branche,
-                    assurez-vous qu'elle a bien été fusionnée dans <code>main</code> ou
-                    <code>dev</code> pour ne rien perdre.</p>
             </div>
-        </div>
-        <div class="descrip-command" id="fusionner-branches-section">
-            <div class="configuration">
-                <h1>FUSIONNER DES BRANCHES</h1>
-                <p>La fusion de branches (<em>merge</em>) permet d'intégrer les modifications
-                    d'une branche dans une autre, par exemple
-                    pour ajouter une fonctionnalité terminée à la branche de développement ou de production.
-                </p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>La fusion consiste à combiner les modifications de deux branches.
-                        Le résultat est un <strong>commit de fusion</strong> (merge commit)
-                        qui intègre l'historique des deux branches.</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="fusionner-branches-section">
+                <div class="configuration">
+                    <h1>FUSIONNER DES BRANCHES</h1>
+                    <p>La fusion de branches (<em>merge</em>) permet d'intégrer les modifications
+                        d'une branche dans une autre, par exemple
+                        pour ajouter une fonctionnalité terminée à la branche de développement ou de production.
+                    </p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>La fusion consiste à combiner les modifications de deux branches.
+                            Le résultat est un <strong>commit de fusion</strong> (merge commit)
+                            qui intègre l'historique des deux branches.</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git merge "nom-de-la-branche"
                     </code></pre>
-                    <p>
-                        Cette commande fusionne la branche spécifiée <strong>dans la branche active</strong>.<br>
-                        🔹 Avant de fusionner, basculez toujours sur la branche <strong>cible</strong> (celle qui reçoit les modifications).<br>
-                        🔹 Exemple : pour intégrer <code>feature/login</code> dans <code>dev</code>, faites :
-                        <code>git checkout dev</code> puis <code>git merge feature/login</code>.
-                    </p>
-                    <h3>🔹 Fusion automatique (fast-forward ou simple merge)</h3>
-                    <p>Si les branches n'ont pas de modifications conflictuelles, Git crée automatiquement un <strong>commit de fusion</strong>.</p>
-                    <p>Exemple :</p>
-                    <pre><code>git checkout dev
+                        <p>
+                            Cette commande fusionne la branche spécifiée <strong>dans la branche active</strong>.<br>
+                            🔹 Avant de fusionner, basculez toujours sur la branche <strong>cible</strong> (celle qui
+                            reçoit les modifications).<br>
+                            🔹 Exemple : pour intégrer <code>feature/login</code> dans <code>dev</code>, faites :
+                            <code>git checkout dev</code> puis <code>git merge feature/login</code>.
+                        </p>
+                        <h3>🔹 Fusion automatique (fast-forward ou simple merge)</h3>
+                        <p>Si les branches n'ont pas de modifications conflictuelles, Git crée automatiquement un
+                            <strong>commit de fusion</strong>.
+                        </p>
+                        <p>Exemple :</p>
+                        <pre><code>git checkout dev
 git merge feature/profil
                     </code></pre>
-                    <p>Git combine les commits et met à jour la branche <code>dev</code>.</p>
-                    <h3>⚠️ Résolution de conflits</h3>
-                    <p>Si les deux branches ont modifié la <strong>même partie d'un fichier</strong>, Git ne peut pas fusionner automatiquement. Un <strong>conflit</strong> survient.</p>
-                    <p>Git marque les zones en conflit dans le fichier :</p>
-                    <p>À vous de modifier le fichier pour résoudre le conflit, puis valider avec :</p>
-                    <pre><code>git add <fichier>
+                        <p>Git combine les commits et met à jour la branche <code>dev</code>.</p>
+                        <h3>⚠️ Résolution de conflits</h3>
+                        <p>Si les deux branches ont modifié la <strong>même partie d'un fichier</strong>, Git ne peut
+                            pas fusionner automatiquement. Un <strong>conflit</strong> survient.</p>
+                        <p>Git marque les zones en conflit dans le fichier :</p>
+                        <p>À vous de modifier le fichier pour résoudre le conflit, puis valider avec :</p>
+                        <pre><code>git add <fichier>
 git commit
                     </code></pre>
-                    <p><strong>💡 Astuce :</strong> Testez toujours votre code après une fusion, même sans conflit, pour éviter les régressions.</p>
+                        <p><strong>💡 Astuce :</strong> Testez toujours votre code après une fusion, même sans conflit,
+                            pour éviter les régressions.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="cloner-depot-section">
-            <div class="configuration">
-                <h1>CLONER UN DÉPÔT</h1>
-                <p>Pour copier un dépôt Git distant (par exemple depuis GitHub)
-                    vers votre machine locale, utilisez la commande suivante :</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Le clonage crée une copie complète du dépôt, incluant tous les fichiers,
-                        l'historique de commits, et les branches. La branche active par
-                        défaut est généralement <code>main</code>.</p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="cloner-depot-section">
+                <div class="configuration">
+                    <h1>CLONER UN DÉPÔT</h1>
+                    <p>Pour copier un dépôt Git distant (par exemple depuis GitHub)
+                        vers votre machine locale, utilisez la commande suivante :</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Le clonage crée une copie complète du dépôt, incluant tous les fichiers,
+                            l'historique de commits, et les branches. La branche active par
+                            défaut est généralement <code>main</code>.</p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git clone "url-du-depot"
                     </code></pre>
-                    <h3>🔹 Changer de branche après le clonage</h3>
-                    <p>Après le clonage, vous êtes sur la branche principale (<code>main</code> ou <code>master</code>).
-                        Pour travailler sur une autre branche (ex: <code>dev</code>) :</p>
-                    <pre><code>
+                        <h3>🔹 Changer de branche après le clonage</h3>
+                        <p>Après le clonage, vous êtes sur la branche principale (<code>main</code> ou
+                            <code>master</code>).
+                            Pour travailler sur une autre branche (ex: <code>dev</code>) :
+                        </p>
+                        <pre><code>
 git checkout dev
                     </code></pre>
-                    <p>Git détecte automatiquement la branche distante <code>origin/dev</code>
-                        et configure le suivi local.</p>
-                    <h3>⚠️ Bonnes pratiques</h3>
-                    <p>
-                        ✅ Toujours cloner un dépôt avant de commencer un projet existant.<br>
-                        ✅ Vérifiez que vous avez les droits d'accès si le dépôt est privé.<br>
-                        ✅ Utilisez <code>git fetch</code> régulièrement pour rester à jour avec les modifications distantes.
-                    </p>
+                        <p>Git détecte automatiquement la branche distante <code>origin/dev</code>
+                            et configure le suivi local.</p>
+                        <h3>⚠️ Bonnes pratiques</h3>
+                        <p>
+                            ✅ Toujours cloner un dépôt avant de commencer un projet existant.<br>
+                            ✅ Vérifiez que vous avez les droits d'accès si le dépôt est privé.<br>
+                            ✅ Utilisez <code>git fetch</code> régulièrement pour rester à jour avec les modifications
+                            distantes.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="descrip-command" id="travail-collaboratif-section">
-            <div class="configuration">
-                <h1>TRAVAIL COLLABORATIF</h1>
-                <p>Git et GitHub permettent une collaboration fluide entre plusieurs développeurs
-                    sur un même projet, grâce à l'utilisation des branches, des commits partagés
-                    et de la synchronisation avec un dépôt distant.</p>
-                <div class="callout-content">
-                    <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
-                    <p>Le travail collaboratif repose sur la synchronisation entre les dépôts locaux des développeurs et un dépôt distant (sur GitHub).
-                        Chaque membre de l'équipe peut travailler sur sa branche, puis partager ses modifications via
-                        <code>push</code> et <code>pull</code>.
-                    </p>
-                </div>
-                <div class="code-block">
-                    <pre><code>
+            <div class="descrip-command" id="travail-collaboratif-section">
+                <div class="configuration">
+                    <h1>TRAVAIL COLLABORATIF</h1>
+                    <p>Git et GitHub permettent une collaboration fluide entre plusieurs développeurs
+                        sur un même projet, grâce à l'utilisation des branches, des commits partagés
+                        et de la synchronisation avec un dépôt distant.</p>
+                    <div class="callout-content">
+                        <i class="callout-icon fa-lg fa-solid fa-info-circle"></i>
+                        <p>Le travail collaboratif repose sur la synchronisation entre les dépôts locaux des
+                            développeurs et un dépôt distant (sur GitHub).
+                            Chaque membre de l'équipe peut travailler sur sa branche, puis partager ses modifications
+                            via
+                            <code>push</code> et <code>pull</code>.
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>
 git pull origin "nom-de-la-branche"
                     </code></pre>
-                    <p>
-                        La commande <code>git push</code> permet d'envoyer vos commits locaux vers le dépôt distant.<br>
-                        Si la branche n'existe pas encore sur GitHub, Git la crée automatiquement.<br>
-                        <strong> Exemple :</strong> <code>git push origin feature/profil</code>.
-                    </p>
-                    <h3> Workflow collaboratif typique</h3>
-                    <ol>
-                        <li><strong>Cloner le dépôt</strong> : <code>git clone https://github.com/organisation/projet.git</code></li>
-                        <li><strong>Créer une branche dédiée</strong> : <code>git checkout -b feature/nouveau-bouton</code></li>
-                        <li><strong>Travailler, commit, commit</strong> : <code>git add .</code> puis <code>git commit -m "Ajout bouton"</code></li>
-                        <li><strong>Pousser sa branche</strong> : <code>git push origin feature/nouveau-bouton</code></li>
-                        <li><strong>Ouvrir une Pull Request (PR)</strong> sur GitHub pour demander la fusion dans <code>dev</code> ou <code>main</code></li>
-                        <li><strong>Revue de code</strong> par les autres membres de l'équipe</li>
-                        <li><strong>Fusion après validation</strong></li>
-                    </ol>
-                    <h3>⚠️ Bonnes pratiques</h3>
-                    <p>
-                        ✅ <strong>Utilisez des branches dédiées</strong> pour chaque fonctionnalité ou correction.<br>
-                        ✅ <strong>Ne poussez jamais directement sur <code>main</code></strong> sans revue de code.<br>
-                        ✅ <strong>Écrivez des messages de commit clairs</strong> (ex: <code>feat: ajouter le formulaire de contact</code>).<br>
-                        ✅ <strong>Résolvez les conflits localement</strong> avant de pousser.
-                    </p>
-                    <p><strong>💡 Astuce :</strong> Une Pull Request (PR) n'est pas une commande Git,
-                        mais une fonctionnalité de GitHub permettant de discuter, reviewer et fusionner
-                        du code en toute sécurité.</p>
+                        <p>
+                            La commande <code>git push</code> permet d'envoyer vos commits locaux vers le dépôt
+                            distant.<br>
+                            Si la branche n'existe pas encore sur GitHub, Git la crée automatiquement.<br>
+                            <strong> Exemple :</strong> <code>git push origin feature/profil</code>.
+                        </p>
+                        <h3> Workflow collaboratif typique</h3>
+                        <ol>
+                            <li><strong>Cloner le dépôt</strong> :
+                                <code>git clone https://github.com/organisation/projet.git</code>
+                            </li>
+                            <li><strong>Créer une branche dédiée</strong> :
+                                <code>git checkout -b feature/nouveau-bouton</code>
+                            </li>
+                            <li><strong>Travailler, commit, commit</strong> : <code>git add .</code> puis
+                                <code>git commit -m "Ajout bouton"</code>
+                            </li>
+                            <li><strong>Pousser sa branche</strong> :
+                                <code>git push origin feature/nouveau-bouton</code>
+                            </li>
+                            <li><strong>Ouvrir une Pull Request (PR)</strong> sur GitHub pour demander la fusion dans
+                                <code>dev</code> ou <code>main</code>
+                            </li>
+                            <li><strong>Revue de code</strong> par les autres membres de l'équipe</li>
+                            <li><strong>Fusion après validation</strong></li>
+                        </ol>
+                        <h3>⚠️ Bonnes pratiques</h3>
+                        <p>
+                            ✅ <strong>Utilisez des branches dédiées</strong> pour chaque fonctionnalité ou
+                            correction.<br>
+                            ✅ <strong>Ne poussez jamais directement sur <code>main</code></strong> sans revue de
+                            code.<br>
+                            ✅ <strong>Écrivez des messages de commit clairs</strong> (ex:
+                            <code>feat: ajouter le formulaire de contact</code>).<br>
+                            ✅ <strong>Résolvez les conflits localement</strong> avant de pousser.
+                        </p>
+                        <p><strong>💡 Astuce :</strong> Une Pull Request (PR) n'est pas une commande Git,
+                            mais une fonctionnalité de GitHub permettant de discuter, reviewer et fusionner
+                            du code en toute sécurité.</p>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="footer1-gitmaster">
+            <div>
+                <h3>GitMaster</h3>
+                <br />
+                <p style="margin-left: 0; line-height: 25px">
+                    La plateforme visuelle pour<br />
+                    apprendre Git et Gitub sans la<br />
+                    complexité du terlinal.
+                </p>
+            </div>
+            <div>
+                <h3>Navigation</h3>
+                <br />
+                <ul class="ul-footer">
+                    <li><a href="accueil">Accueil</a></li>
+                    <li><a href="commandes">Commandes</a></li>
+                    <li><a href="vscode">VS Code</a></li>
+                    <li><a href="apropos">A Propos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Newsletters</h3>
+                <br />
+                <p style="margin-left: 0; line-height: 25px">
+                    Abonnez-vous pour recevoir des<br />
+                    mises à jour et des conseils Git.
+                </p>
+                <form>
+                    <label for="email"><input type="email" name="email" placeholder="Votre email" /></label>
+                    <button type="submit">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-    </section>
-</main>
-
-
-
-<footer>
-    <div class="footer1-gitmaster">
-      <div>
-        <h3>GitMaster</h3>
-        <br />
-        <p style="margin-left: 0; line-height: 25px">
-          La plateforme visuelle pour<br />
-          apprendre Git et Gitub sans la<br />
-          complexité du terlinal.
-        </p>
-      </div>
-      <div>
-        <h3>Navigation</h3>
-        <br />
-        <ul class="ul-footer">
-          <li><a href="accueil">Accueil</a></li>
-          <li><a href="commandes">Commandes</a></li>
-          <li><a href="vscode">VS Code</a></li>
-          <li><a href="apropos">A Propos</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Newsletters</h3>
-        <br />
-        <p style="margin-left: 0; line-height: 25px">
-          Abonnez-vous pour recevoir des<br />
-          mises à jour et des conseils Git.
-        </p>
-        <form>
-          <label for="email"><input type="email" name="email" placeholder="Votre email" /></label>
-          <button type="submit">
-            <i class="fa-regular fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </div>
-    <div class="footer2-gitmaster">
-      <div>© 2023 GitMaster. Tous droits réservés.</div>
-      <div>
-        <ul>
-          <li><a href="mention-legal">Mentions légales</a></li>
-          <li><a href="confidentialité">Confidentialités</a></li>
-          <li><a href="conditions">Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-       <script>
+        <div class="footer2-gitmaster">
+            <div>© 2023 GitMaster. Tous droits réservés.</div>
+            <div>
+                <ul>
+                    <li><a href="mention-legal">Mentions légales</a></li>
+                    <li><a href="confidentialité">Confidentialités</a></li>
+                    <li><a href="conditions">Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-list a');
     const sections = document.querySelectorAll('.command-description .descrip-command');
@@ -834,9 +916,27 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Thème changé:', this.checked ? 'sombre' : 'clair');
       });
     }
+
+   document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.item');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // 1. Retirez la classe 'active' de tous les éléments
+            items.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // 2. Ajoutez la classe 'active' à l'élément cliqué
+            item.classList.add('active');
+        });
+    });
+});
        </script>
 
 
-</body>
-</html>
+    <script src="../app.js"></script>
 
+</body>
+
+</html>

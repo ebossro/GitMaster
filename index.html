@@ -92,17 +92,21 @@
       </div>
     </section>
     <section id="how-learning">
+      <!-- Titre principal centré -->
       <h3 class="how-learning-title">
         Pourquoi apprendre avec GitMaster ?
       </h3>
 
+      <!-- Paragraphe descriptif centré -->
       <p class="how-learning-description">
         Notre approche visuelle et interactive rend l'apprentissage de Git
         accessible à tous,
         sans la complexité du terminal
       </p>
 
+      <!-- Conteneur des trois colonnes -->
       <div class="how-learning-grid">
+        <!-- Colonne 1 : Apprentissage Visuel -->
         <div class="learning-card">
           <div class="card-icon">
             <i class="fa-regular fa-eye"></i>
@@ -115,6 +119,7 @@
           </p>
         </div>
 
+        <!-- Colonne 2 : Sans Terminal -->
         <div class="learning-card">
           <div class="card-icon">
             <i class="fa-regular fa-eye"></i>
@@ -127,6 +132,7 @@
           </p>
         </div>
 
+        <!-- Colonne 3 : Pédagogie Progressive -->
         <div class="learning-card">
           <div class="card-icon">
             <i class="fa-regular fa-eye"></i>
@@ -144,12 +150,11 @@
     <!-- Section d'appel à l'action (CTA) -->
     <section id="cta-section">
       <div class="cta-inner">
-        <h2 class="cta-title">Prêt à accélérer votre apprentissage Git ? 🚀</h2>
-        <p class="cta-subtitle">
-          Rejoignez notre communauté et transformez votre manière de travailler avec des guides interactifs et visuels.
+        <h3 class="cta-title">Prêt à accélérer votre apprentissage Git ?</h3>
+        <p class="cta-subtitle">Rejoignez GitMaster et progressez avec des guides visuels et pratiques.
         </p>
         <div class="cta-buttons">
-          <a href="./Page_VsCode/index.html" class="cta-btn">Commencer l'aventure</a>
+          <a href="./Page_VsCode/index.html" class="cta-btn cta-primary">Commencer maintenant</a>
         </div>
       </div>
     </section>
@@ -202,46 +207,8 @@
     </div>
   </footer>
 
-  <script>
-    // Gestion du menu burger
-    const burgerMenu = document.getElementById('burger-menu');
-    const navMenu = document.getElementById('nav-menu');
-    const body = document.body;
-
-    // Toggle du menu burger
-    burgerMenu.addEventListener('click', function () {
-      burgerMenu.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      body.classList.toggle('menu-open');
-    });
-
-    // Fermer le menu en cliquant sur un lien
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        burgerMenu.classList.remove('active');
-        navMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-      });
-    });
-
-    // Fermer le menu en cliquant en dehors
-    document.addEventListener('click', function (event) {
-      if (!burgerMenu.contains(event.target) && !navMenu.contains(event.target)) {
-        burgerMenu.classList.remove('active');
-        navMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-      }
-    });
-
-    // Gestion du thème sombre/clair
-    const darkModeToggle = document.getElementById('darkmode-toggle');
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('change', function () {
-        console.log('Thème changé:', this.checked ? 'sombre' : 'clair');
-      });
-    }
-  </script>
+  <!-- Script pour le menu burger responsive -->
+  <script src="./app.js"></script>
 </body>
 
 </html>
