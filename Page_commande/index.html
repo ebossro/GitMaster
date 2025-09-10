@@ -220,26 +220,26 @@
             <h2>Référence rapide</h2>
             <div class="container">
                 <ul class="nav-list">
-                    <li><a href="#initialisation-git-section" id="link-initialisation">INITIALISATION</a></li>
-                    <li><a href="#configuration-git-section" id="link-configuration">CONFIGURATION DE GIT</a></li>
-                    <li><a href="#verification-configuration-section" id="link-verification">VÉRIFIER LA
+                    <li class="item" ><a href="#initialisation-git-section" id="link-initialisation">INITIALISATION</a></li>
+                    <li class="item" ><a href="#configuration-git-section" id="link-configuration">CONFIGURATION DE GIT</a></li>
+                    <li class="item" ><a href="#verification-configuration-section" id="link-verification">VÉRIFIER LA
                             CONFIGURATION</a></li>
-                    <li><a href="#depot-git-section" id="link-depot">DÉPÔT GIT</a></li>
-                    <li><a href="#initialisation-depot-non-versionne-section"
+                    <li class="item" ><a href="#depot-git-section" id="link-depot">DÉPÔT GIT</a></li>
+                    <li class="item" ><a href="#initialisation-depot-non-versionne-section"
                             id="link-init-non-versionne">INITIALISATION D'UN DÉPÔT GIT</a></li>
-                    <li><a href="#preparation-modifications-section" id="link-preparation-modifs">PRÉPARATION DES
+                    <li class="item" ><a href="#preparation-modifications-section" id="link-preparation-modifs">PRÉPARATION DES
                             MODIFICATIONS</a></li>
-                    <li><a href="#etat-modifications-section" id="link-etat-modifs">ÉTAT ET MODIFICATIONS</a></li>
-                    <li><a href="#voir-modifications-section" id="link-voir-modifs">MODIFICATIONS</a></li>
-                    <li><a href="#creer-commit-section" id="link-creer-commit">CRÉER UN COMMIT</a></li>
-                    <li><a href="#gestion-branches-section" id="link-gestion-branches">GESTION DES BRANCHES</a></li>
-                    <li><a href="#changer-branche-section" id="link-changer-branche">CHANGER DE BRANCHE</a></li>
-                    <li><a href="#renommer-branche-section" id="link-renommer-branche">RENOMMER UNE BRANCHE</a></li>
-                    <li><a href="#supprimer-branche-section" id="link-supprimer-branche">SUPPRIMER UNE BRANCHE</a></li>
-                    <li><a href="#fusionner-branches-section" id="link-fusionner-branches">FUSIONNER DES BRANCHES</a>
+                    <li class="item" ><a href="#etat-modifications-section" id="link-etat-modifs">ÉTAT ET MODIFICATIONS</a></li>
+                    <li class="item" ><a href="#voir-modifications-section" id="link-voir-modifs">MODIFICATIONS</a></li>
+                    <li class="item" ><a href="#creer-commit-section" id="link-creer-commit">CRÉER UN COMMIT</a></li>
+                    <li class="item" ><a href="#gestion-branches-section" id="link-gestion-branches">GESTION DES BRANCHES</a></li>
+                    <li class="item" ><a href="#changer-branche-section" id="link-changer-branche">CHANGER DE BRANCHE</a></li>
+                    <li class="item" ><a href="#renommer-branche-section" id="link-renommer-branche">RENOMMER UNE BRANCHE</a></li>
+                    <li class="item" ><a href="#supprimer-branche-section" id="link-supprimer-branche">SUPPRIMER UNE BRANCHE</a></li>
+                    <li class="item" ><a href="#fusionner-branches-section" id="link-fusionner-branches">FUSIONNER DES BRANCHES</a>
                     </li>
-                    <li><a href="#cloner-depot-section" id="link-cloner-depot">CLONER UN DÉPÔT</a></li>
-                    <li><a href="#travail-collaboratif-section" id="link-travail-collaboratif">TRAVAIL COLLABORATIF</a>
+                    <li class="item" ><a href="#cloner-depot-section" id="link-cloner-depot">CLONER UN DÉPÔT</a></li>
+                    <li class="item" ><a href="#travail-collaboratif-section" id="link-travail-collaboratif">TRAVAIL COLLABORATIF</a>
                     </li>
                 </ul>
             </div>
@@ -769,116 +769,171 @@ git pull origin "nom-de-la-branche"
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-list a');
-            const sections = document.querySelectorAll('.command-description .descrip-command');
+    const navLinks = document.querySelectorAll('.nav-list a');
+    const sections = document.querySelectorAll('.command-description .descrip-command');
 
-            // Fonction pour masquer toutes les sections
-            const hideAllSections = () => {
-                sections.forEach(section => {
-                    section.style.display = 'none';
-                });
-            };
-
-            // afficher la premier section par défaut meme si on actualise la page
-
-            sections[0].style.display = 'block';
-
-
-            // Fonction pour afficher une section spécifique
-            const showSection = (sectionId) => {
-                hideAllSections(); // Masque toutes les sections
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    targetSection.style.display = 'block'; // Affiche la section cible
-                }
-            };
-
-            // Au chargement de la page, masquer toutes les sections sauf la première (ou celle par défaut)
-            hideAllSections();
-            // Afficher la première section par défaut au chargement
-            if (sections.length > 0) {
-                sections[0].style.display = 'block';
-            }
-
-
-            // Ajouter un écouteur d'événements à chaque lien de navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Empêche le comportement de lien par défaut (rechargement/défilement)
-
-                    // Récupère l'ID de la section à afficher à partir du href du lien
-                    const targetId = link.getAttribute('href').substring(1); // Retire le '#'
-                    showSection(targetId);
-                });
-            });
+    // Fonction pour masquer toutes les sections
+    const hideAllSections = () => {
+        sections.forEach(section => {
+            section.style.display = 'none';
         });
+    };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainSections = document.querySelectorAll('.command-description .descrip-command');
-            const searchInput = document.getElementById('searchInput');
-            const searchButton = document.querySelector('.search-button'); // Sélectionne le bouton de recherche
-            const quickCommandsSection = document.querySelector('.quick-commands');
-            const commandCards = document.querySelectorAll('.quick-commands .command-card');
+    // afficher la premier section par défaut meme si on actualise la page
 
-            // Masque les sections de descriptions détaillées par défaut
-            mainSections.forEach(section => {
-                section.style.display = 'none';
-            });
+    sections[0].style.display = 'block';
 
-            // Affiche la section de commandes rapides par défaut
-            if (quickCommandsSection) {
-                quickCommandsSection.style.display = 'block';
-            }
 
-            // Fonction pour filtrer les cartes de commandes
-            const filterCards = () => {
-                const searchTerm = searchInput.value.toLowerCase();
+    // Fonction pour afficher une section spécifique
+    const showSection = (sectionId) => {
+        hideAllSections(); // Masque toutes les sections
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.style.display = 'block'; // Affiche la section cible
+        }
+    };
 
-                commandCards.forEach(card => {
-                    const commandName = card.querySelector('h2').textContent.toLowerCase();
-                    const commandDescription = card.querySelector('p').textContent.toLowerCase();
+    // Au chargement de la page, masquer toutes les sections sauf la première (ou celle par défaut)
+    hideAllSections();
+    // Afficher la première section par défaut au chargement
+    if (sections.length > 0) {
+        sections[0].style.display = 'block';
+    }
 
-                    // Affiche la carte si le terme de recherche est dans le titre ou la description
-                    if (commandName.includes(searchTerm) || commandDescription.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            };
 
-            // lorque lon lance la rechercher si le champ est vide ne rien afficher
-            searchButton.addEventListener('click', () => {
-                if (searchInput.value.trim() === '') {
-                    // Si le champ de recherche est vide, ne rien afficher
-                    commandCards.forEach(card => card.style.display = 'none');
-                    return;
-                }
-                mainSections.forEach(section => section.style.display = 'none');
-                quickCommandsSection.style.display = 'block';
-                filterCards();
-            });
+    // Ajouter un écouteur d'événements à chaque lien de navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêche le comportement de lien par défaut (rechargement/défilement)
 
-            // Optionnel : Gérer les clics sur les liens de la barre latérale si vous les conservez
-            const navLinks = document.querySelectorAll('.nav-list a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-
-                    // Masque toutes les sections sauf la cible
-                    mainSections.forEach(section => section.style.display = 'none');
-                    quickCommandsSection.style.display = 'none';
-
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.style.display = 'block';
-                    }
-                });
-            });
+            // Récupère l'ID de la section à afficher à partir du href du lien
+            const targetId = link.getAttribute('href').substring(1); // Retire le '#'
+            showSection(targetId);
         });
+    });
+});
 
-    </script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainSections = document.querySelectorAll('.command-description .descrip-command');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.querySelector('.search-button'); // Sélectionne le bouton de recherche
+    const quickCommandsSection = document.querySelector('.quick-commands');
+    const commandCards = document.querySelectorAll('.quick-commands .command-card');
+
+    // Masque les sections de descriptions détaillées par défaut
+    mainSections.forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Affiche la section de commandes rapides par défaut
+    if (quickCommandsSection) {
+        quickCommandsSection.style.display = 'block';
+    }
+
+    // Fonction pour filtrer les cartes de commandes
+    const filterCards = () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        commandCards.forEach(card => {
+            const commandName = card.querySelector('h2').textContent.toLowerCase();
+            const commandDescription = card.querySelector('p').textContent.toLowerCase();
+
+            // Affiche la carte si le terme de recherche est dans le titre ou la description
+            if (commandName.includes(searchTerm) || commandDescription.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
+
+    // lorque lon lance la rechercher si le champ est vide ne rien afficher
+    searchButton.addEventListener('click', () => {
+        if (searchInput.value.trim() === '') {
+            // Si le champ de recherche est vide, ne rien afficher
+            commandCards.forEach(card => card.style.display = 'none');
+            return;
+        }
+        mainSections.forEach(section => section.style.display = 'none');
+        quickCommandsSection.style.display = 'block';
+        filterCards();
+    });
+
+    // Optionnel : Gérer les clics sur les liens de la barre latérale si vous les conservez
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            
+            // Masque toutes les sections sauf la cible
+            mainSections.forEach(section => section.style.display = 'none');
+            quickCommandsSection.style.display = 'none';
+            
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        });
+    });
+});
+
+ // Gestion du menu burger
+    const burgerMenu = document.getElementById('burger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
+
+    // Toggle du menu burger
+    burgerMenu.addEventListener('click', function () {
+      burgerMenu.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      body.classList.toggle('menu-open');
+    });
+
+    // Fermer le menu en cliquant sur un lien
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+      });
+    });
+
+    // Fermer le menu en cliquant en dehors
+    document.addEventListener('click', function (event) {
+      if (!burgerMenu.contains(event.target) && !navMenu.contains(event.target)) {
+        burgerMenu.classList.remove('active');
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+      }
+    });
+
+    // Gestion du thème sombre/clair
+    const darkModeToggle = document.getElementById('darkmode-toggle');
+    if (darkModeToggle) {
+      darkModeToggle.addEventListener('change', function () {
+        console.log('Thème changé:', this.checked ? 'sombre' : 'clair');
+      });
+    }
+
+   document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.item');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            // 1. Retirez la classe 'active' de tous les éléments
+            items.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // 2. Ajoutez la classe 'active' à l'élément cliqué
+            item.classList.add('active');
+        });
+    });
+});
+       </script>
+
 
     <script src="../app.js"></script>
 
